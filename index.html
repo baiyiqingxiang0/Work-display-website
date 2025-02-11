@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">作品集</div>
+            <ul class="nav-links">
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#about">关于我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>欢迎来到我的作品展示</h1>
+            <p>这里展示了我的编程学习成果</p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>我的项目</h2>
+            <div class="project-grid">
+                <!-- 小游戏合集 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- 更新SVG为游戏合集图标 -->
+                        <svg viewBox="0 0 200 200" class="games-preview">
+                            <!-- 游戏手柄形状 -->
+                            <rect x="40" y="60" width="120" height="80" rx="40" fill="#007AFF"/>
+                            <circle cx="85" cy="100" r="15" fill="#ffffff"/>
+                            <rect x="130" y="85" width="10" height="10" rx="2" fill="#ffffff"/>
+                            <rect x="145" y="85" width="10" height="10" rx="2" fill="#ffffff"/>
+                            <rect x="130" y="100" width="10" height="10" rx="2" fill="#ffffff"/>
+                            <rect x="145" y="100" width="10" height="10" rx="2" fill="#ffffff"/>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>小游戏合集</h3>
+                        <p>包含经典的贪吃蛇和俄罗斯方块等游戏，使用HTML5 Canvas开发，支持难度选择和音效。</p>
+                        <div class="project-links">
+                            <a href="games/index.html" class="button">开始游戏</a>
+                            <a href="https://github.com/baiyiqingxiang0/personal-website" class="button secondary">查看代码</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 目标检测项目 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 200 200" class="detection-preview">
+                            <!-- 更新的SVG图标 -->
+                            <rect x="20" y="20" width="160" height="120" fill="#f5f5f7" stroke="#007AFF" stroke-width="2"/>
+                            <rect x="40" y="40" width="60" height="60" fill="none" stroke="#FF3B30" stroke-width="2" rx="4"/>
+                            <text x="70" y="80" text-anchor="middle" fill="#FF3B30" font-size="12">目标</text>
+                            <rect x="120" y="60" width="40" height="40" fill="none" stroke="#4CD964" stroke-width="2" rx="4"/>
+                            <text x="140" y="85" text-anchor="middle" fill="#4CD964" font-size="10">物体</text>
+                            <rect x="30" y="150" width="140" height="20" fill="#007AFF" rx="4"/>
+                            <text x="100" y="164" text-anchor="middle" fill="white" font-size="12">实时目标检测</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>目标检测</h3>
+                        <p>基于深度学习的实时目标检测系统，支持PCB缺陷和安全帽佩戴检测。</p>
+                        <div class="project-links">
+                            <!-- 云服务器将地址改为http://ip:5000/ -->
+                            <a href="http://localhost:5000"class="button">项目演示</a>  
+                            <a href="https://github.com/baiyiqingxiang0/personal-website" class="button secondary">查看代码</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI工具箱项目 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 200 200" class="ai-tools-preview">
+                            <!-- AI工具箱图标 -->
+                            <rect x="20" y="20" width="160" height="120" fill="#f5f5f7" stroke="#007AFF" stroke-width="2"/>
+                            <text x="100" y="80" text-anchor="middle" fill="#007AFF" font-size="16">AI工具箱</text>
+                            <rect x="30" y="150" width="140" height="20" fill="#007AFF" rx="4"/>
+                            <text x="100" y="164" text-anchor="middle" fill="white" font-size="12">探索AI工具</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI工具箱</h3>
+                        <p>集合多种AI工具，帮助用户进行数据分析、图像处理和自然语言处理等任务。</p>
+                        <div class="project-links">
+                            <a href="login/login.html" class="button">使用工具</a>
+                            <a href="https://github.com/baiyiqingxiang0/personal-website" class="button secondary">查看代码</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>关于我</h2>
+            <p>我是一名热爱编程的初学者，正在学习Web开发和人工智能相关技术。这个网站展示了我的学习成果和进步历程。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 白衣的编程学习笔记 | 持续更新中</p>
+    </footer>
+</body>
+</html> 

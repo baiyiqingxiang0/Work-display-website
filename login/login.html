@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎回来</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" width="32" height="32">
+                <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+        </div>
+        <h1>欢迎回来</h1>
+        <p class="subtitle">登录以继续您的学习</p>
+        
+        <form id="auth-form">
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码" required>
+            </div>
+
+            <button type="submit" class="btn-primary">登录</button>
+        </form>
+
+        <p class="message" id="message"></p>
+        
+        <div class="auth-links">
+            <a href="register.html" class="link">没有账号？注册</a>
+            <a href="#" class="link" id="forgot-password">忘记密码？</a>
+        </div>
+    </div>
+
+    <script>
+        const supabaseUrl = 'https://iawvxysnwfbiuqtujceh.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlhd3Z4eXNud2ZiaXVxdHVqY2VoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2ODMxNTIsImV4cCI6MjA1MzI1OTE1Mn0.YFGZEpBGEU_OdKxycgRr-7bjccsbEHlCx-LS0CMpM7U';
+        
+        // 修复 Supabase 客户端创建
+        const { createClient } = supabase;
+        const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+
+        // 检查用户是否已登录
+        window.addEventListener('load', async () => {
+            const { data: { session }, error } = await supabaseClient.auth.getSession();
+            if (session) {
+                window.location.href = '../ai-tools/index.html';
+            }
+        });
+
+        // 处理登录表单提交
+        document.getElementById('auth-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const messageEl = document.getElementById('message');
+
+            try {
+                const { data, error } = await supabaseClient.auth.signInWithPassword({
+                    email,
+                    password
+                });
+
+                if (error) throw error;
+
+                messageEl.innerText = '登录成功！';
+                messageEl.style.color = '#4CAF50';
+                
+                // 修改跳转路径
+                setTimeout(() => {
+                    window.location.href = '../ai-tools/index.html';
+                }, 500);
+            } catch (error) {
+                messageEl.innerText = error.message;
+                messageEl.style.color = '#FF3B30';
+            }
+        });
+
+        // 处理忘记密码
+        document.getElementById('forgot-password').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const messageEl = document.getElementById('message');
+
+            if (!email) {
+                messageEl.innerText = '请输入邮箱地址';
+                messageEl.style.color = '#FF3B30';
+                return;
+            }
+
+            try {
+                const { error } = await supabaseClient.auth.resetPasswordForEmail(email);
+                if (error) throw error;
+
+                messageEl.innerText = '重置密码链接已发送到您的邮箱';
+                messageEl.style.color = '#4CAF50';
+            } catch (error) {
+                messageEl.innerText = error.message;
+                messageEl.style.color = '#FF3B30';
+            }
+        });
+    </script>
+</body>
+</html> 

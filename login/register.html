@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建账号</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" width="32" height="32">
+                <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            </svg>
+        </div>
+        <h1>创建账号</h1>
+        <p class="subtitle">开始您的AI学习之旅</p>
+        
+        <form id="register-form">
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请设置密码" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">确认密码</label>
+                <input type="password" id="confirm-password" placeholder="请再次输入密码" required>
+            </div>
+
+            <button type="submit" class="btn-primary">注册</button>
+        </form>
+
+        <p class="message" id="message"></p>
+        
+        <div class="auth-links">
+            <a href="login.html" class="link">已有账号？登录</a>
+        </div>
+    </div>
+
+    <script>
+        const supabaseUrl = 'https://iawvxysnwfbiuqtujceh.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlhd3Z4eXNud2ZiaXVxdHVqY2VoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2ODMxNTIsImV4cCI6MjA1MzI1OTE1Mn0.YFGZEpBGEU_OdKxycgRr-7bjccsbEHlCx-LS0CMpM7U';
+        // 修复 Supabase 客户端创建
+        const { createClient } = supabase;
+        const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+        // 处理注册表单提交
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const messageEl = document.getElementById('message');
+
+            if (password !== confirmPassword) {
+                messageEl.innerText = '两次输入的密码不一致';
+                messageEl.style.color = '#FF3B30';
+                return;
+            }
+
+            try {
+                const { data, error } = await supabaseClient.auth.signUp({
+                    email,
+                    password
+                });
+
+                if (error) throw error;
+
+                messageEl.innerText = '注册成功！请查看您的邮箱以验证账户。';
+                messageEl.style.color = '#4CAF50';
+                
+                // 延迟跳转到登录页
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            } catch (error) {
+                messageEl.innerText = error.message;
+                messageEl.style.color = '#FF3B30';
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI服务仪表盘</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>AI功能区</h1>
+            </div>
+            <div class="theme-toggle">
+                <button id="toggleTheme" class="theme-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="section-title">视觉服务</h2>
+            <p class="section-desc">选择合适的视觉服务，开启您的AI之旅</p>
+
+            <div class="services-grid">
+                <!-- AI图像生成服务 -->
+                <div class="service-card" onclick="location.href='./Picture/index.html'">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                    <h3>AI图像生成</h3>
+                    <p>使用先进的AI模型，将您的创意转化为独特的图像</p>
+                    <div class="service-footer">
+                        <span class="price">限时免费</span>
+                    </div>
+                </div>
+
+                <!-- GLM视觉分析 -->
+                <div class="service-card" onclick="location.href='./GLM/index.html'">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </div>
+                    <h3>GLM-4V-Flash视觉分析</h3>
+                    <p>强大的视觉分析工具，支持图像描述、场景分析、物体识别等多种功能</p>
+                    <div class="service-footer">
+                        <span class="price">免费使用</span>
+                    </div>
+                </div>
+
+                <!-- CopyCoder -->
+                <div class="service-card" onclick="location.href='./Chat/index.html'">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        </svg>
+                    </div>
+                    <h3>白衣的聊天助手</h3>
+                    <p>一个可以和你聊天的AI助手，支持DeepSeek-R1、DeepSeek-V3、Moonshot V1、Moonshot V1-Vision</p>
+                    <div class="service-footer">
+                        <span class="price">免费使用</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- 添加其它服务区域 -->
+        <section>
+            <h2 class="section-title">其它服务</h2>
+            <div class="services-grid">
+                <!-- 表情包生成服务 -->
+                <div class="service-card" onclick= "window.open('http://www.baiyiqingxiang.online:8780')">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-8c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4zm6-1.5c0 .83-.67 1.5-1.5 1.5S10 11.83 10 11s.67-1.5 1.5-1.5S14 10.17 14 11zm-6 0c0 .83-.67 1.5-1.5 1.5S6 11.83 6 11s.67-1.5 1.5-1.5S8 10.17 8 11z"/>
+                        </svg>
+                    </div>
+                    <h3>表情包生成</h3>
+                    <p>使用AI生成个性化的表情包，表达您的情感</p>
+                    <div class="service-footer">
+                        <span class="price">免费使用</span>
+                    </div>
+                </div>
+
+                <!-- 中文名生成服务 -->
+                <div class="service-card" onclick= "window.open('http://www.baiyiqingxiang.online:8000')">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-8c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4zm6-1.5c0 .83-.67 1.5-1.5 1.5S10 11.83 10 11s.67-1.5 1.5-1.5S14 10.17 14 11zm-6 0c0 .83-.67 1.5-1.5 1.5S6 11.83 6 11s.67-1.5 1.5-1.5S8 10.17 8 11z"/>
+                        </svg>
+                    </div>
+                    <h3>中文名生成</h3>
+                    <p>根据您的英文名字生成独特的中文名字，包含每个字的含义</p>
+                    <div class="service-footer">
+                        <span class="price">免费使用</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
