@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/baiyiqingxiang0/personal-website)
-![GitHub license](https://img.shields.io/github/license/baiyiqingxiang0/personal-website)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fbaiyiqingxiang0.github.io%2Fpersonal-website)
+![GitHub last commit](https://img.shields.io/github/last-commit/baiyiqingxiang0/Work-display-website)
+![GitHub license](https://img.shields.io/github/license/baiyiqingxiang0/Work-display-website)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fbaiyiqingxiang0.github.io%2FWork-display-website)
 
 </div>
 
@@ -62,8 +62,8 @@
 
 1. 克隆项目
 ```bash
-git clone .....
-cd personal-website
+git clone https://github.com/baiyiqingxiang0/Work-display-website.git
+cd Work-display-website
 ```
 
 2. 安装依赖
