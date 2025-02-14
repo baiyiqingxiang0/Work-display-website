@@ -76,8 +76,8 @@
                 <!-- 表情包生成服务 -->
                 <div class="service-card" onclick= "window.open('http://www.baiyiqingxiang.online:8780')">
                     <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-8c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4zm6-1.5c0 .83-.67 1.5-1.5 1.5S10 11.83 10 11s.67-1.5 1.5-1.5S14 10.17 14 11zm-6 0c0 .83-.67 1.5-1.5 1.5S6 11.83 6 11s.67-1.5 1.5-1.5S8 10.17 8 11z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-6c.78 2.34 2.72 4 5 4s4.22-1.66 5-4H7zm8-4c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm-6 0c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1z"/>
                         </svg>
                     </div>
                     <h3>表情包生成</h3>
@@ -90,8 +90,8 @@
                 <!-- 中文名生成服务 -->
                 <div class="service-card" onclick= "window.open('http://www.baiyiqingxiang.online:8000')">
                     <div class="service-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-8c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4zm6-1.5c0 .83-.67 1.5-1.5 1.5S10 11.83 10 11s.67-1.5 1.5-1.5S14 10.17 14 11zm-6 0c0 .83-.67 1.5-1.5 1.5S6 11.83 6 11s.67-1.5 1.5-1.5S8 10.17 8 11z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 7H2v2h9V7zm0 8H2v2h9v-2zm5.34-4L12.8 7.46l1.41-1.41 2.12 2.12 4.24-4.24L22 5.34 16.34 11zm0 8l-3.54-3.54 1.41-1.41 2.12 2.12 4.24-4.24L22 13.34 16.34 19z"/>
                         </svg>
                     </div>
                     <h3>中文名生成</h3>
@@ -100,9 +100,35 @@
                         <span class="price">免费使用</span>
                     </div>
                 </div>
+
+                <!-- 诗词生成服务 -->
+                <div class="service-card" onclick= "window.open('http://www.baiyiqingxiang.online:8100')">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/>
+                            <path d="M17 16.5c0-1.5-3-2.5-3-2.5s3-1 3-2.5V9c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2.5c0 1.5 3 2.5 3 2.5s-3 1-3 2.5V19c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-2.5z"/>
+                        </svg>
+                    </div>
+                    <h3>诗词生成</h3>
+                    <p>AI智能创作古诗词，体验传统文化的优雅韵味</p>
+                    <div class="service-footer">
+                        <span class="price">免费使用</span>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
     <script src="script.js"></script>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/cn/index.js"></script>
+    <script>
+        new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: '7470806720009601039',
+          },
+          componentProps: {
+            title: '迪捷通智能客服',
+          },
+        });
+    </script>
 </body>
 </html>
